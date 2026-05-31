@@ -1,0 +1,45 @@
+{
+  "name": "agent-delivery-island",
+  "version": "1.0.0",
+  "description": "桌面灵动岛 - 外卖配送风格 AI Agent 状态监控",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "electron:dev": "concurrently \"vite\" \"wait-on http://localhost:5173 && electron .\"",
+    "electron:build": "vite build && electron-builder"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "build": {
+    "appId": "com.shan.agent-delivery-island",
+    "productName": "AgentDeliveryIsland",
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": "nsis",
+      "artifactName": "AgentDeliveryIsland.${ext}"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": false
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ]
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.0",
+    "concurrently": "^8.2.2",
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1",
+    "vite": "^5.4.0",
+    "wait-on": "^7.2.0"
+  }
+}
