@@ -13,6 +13,21 @@
 | **确认请求** (Confirm) | 需要用户授权工具调用 | 橙红脉冲光晕，展开面板显示命令详情，提供 同意/取消 按钮 |
 | **订单完成** (Complete) | 任务完成 | 绿色对勾，3 秒后自动回到待命 |
 
+### 截图
+
+<p align="center">
+  <img src="screenshots/01-idle.png" alt="待命中 (Idle)" width="260" />
+  <img src="screenshots/02-delivering.png" alt="配送中 (Delivering)" width="360" />
+</p>
+
+<p align="center">
+  <img src="screenshots/03-confirm.png" alt="确认请求 (Confirm)" width="520" />
+</p>
+
+<p align="center">
+  <img src="screenshots/04-complete.png" alt="订单完成 (Complete)" width="260" />
+</p>
+
 **亮点：**
 
 - 鼠标穿透：空闲状态下点击直接穿透到下层窗口，不干扰工作
