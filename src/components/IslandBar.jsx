@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 
 const CONFIG = {
-  idle:      { width: 150, height: 30 },
+  idle:      { width: 200, height: 34 },
   delivering:{ width: 360, height: 38 },
   confirm:   { width: 500, height: 44 },
   confirmExpanded: { width: 520, height: 420 },
-  complete:  { width: 210, height: 34 },
+  complete:  { width: 260, height: 38 },
 };
 
 const STYLE = {

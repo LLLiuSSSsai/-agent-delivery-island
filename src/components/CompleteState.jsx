@@ -14,8 +14,9 @@ export default function CompleteState() {
       alignItems: 'center',
       gap: 8,
       padding: '0 16px',
-      fontSize: 11,
-      color: 'rgba(140,200,180,0.6)',
+      height: '100%',
+      fontSize: 14,
+      color: 'rgba(140,200,180,0.7)',
       letterSpacing: '0.03em',
       animation: leaving ? 'slideOut 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards' : 'none',
     }}>
@@ -26,7 +27,7 @@ export default function CompleteState() {
       </svg>
       <span>订单已完成</span>
       <div style={{ width: 1, height: 10, background: 'rgba(255,255,255,0.06)' }} />
-      <span style={{ color: 'rgba(255,255,255,0.18)', fontSize: 10 }}>
+      <span style={{ color: 'rgba(255,255,255,0.25)', fontSize: 12 }}>
         {leaving ? '收起中...' : '3s 后收起'}
       </span>
     </div>

@@ -133,17 +133,20 @@ process.stdin.on('end', () => {
 
   const toolName = input.tool_name || '';
 
-  // 不需要确认的工具 → 直接放行
+  // 不需要确认的工具 → 直接放行（但不覆盖正在等待 confirm 的状态）
   if (!CONFIRM_TOOLS.includes(toolName)) {
-    writeJSON(STATE_FILE, {
-      status: 'delivering',
-      task: 'Agent 正在工作中...',
-      command: '',
-      details: '',
-      requestId: '',
-      timestamp: Date.now(),
-      elapsed: '00:00',
-    });
+    const current = readJSON(STATE_FILE);
+    if (!current || current.status !== 'confirm') {
+      writeJSON(STATE_FILE, {
+        status: 'delivering',
+        task: 'Agent 正在工作中...',
+        command: '',
+        details: '',
+        requestId: '',
+        timestamp: Date.now(),
+        elapsed: '00:00',
+      });
+    }
     process.stdout.write(JSON.stringify({ decision: 'allow' }));
     process.exit(0);
   }
@@ -187,9 +190,18 @@ process.stdin.on('end', () => {
   const poll = () => {
     const elapsed = Date.now() - startTime;
 
-    // 超时 → 自动拒绝
+    // 超时 → 自动拒绝，并清理状态文件避免灵动岛卡在 confirm
     if (elapsed >= TIMEOUT) {
       try { if (fs.existsSync(RESPONSE_FILE)) fs.unlinkSync(RESPONSE_FILE); } catch {}
+      writeJSON(STATE_FILE, {
+        status: 'idle',
+        task: '',
+        command: '',
+        details: '',
+        requestId: '',
+        timestamp: Date.now(),
+        elapsed: '00:00',
+      });
       process.stdout.write(JSON.stringify({ decision: 'deny' }));
       process.exit(0);
     }

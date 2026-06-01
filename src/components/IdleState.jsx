@@ -7,8 +7,9 @@ export default function IdleState() {
       alignItems: 'center',
       gap: 8,
       padding: '0 16px',
-      fontSize: 11,
-      color: 'rgba(180,200,230,0.6)',
+      height: '100%',
+      fontSize: 14,
+      color: 'rgba(180,200,230,0.7)',
       letterSpacing: '0.04em',
       textTransform: 'uppercase',
     }}>
@@ -25,7 +26,7 @@ export default function IdleState() {
         height: 10,
         background: 'rgba(255,255,255,0.06)',
       }} />
-      <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: 10, textTransform: 'none' }}>
+      <span style={{ color: 'rgba(255,255,255,0.25)', fontSize: 12, textTransform: 'none' }}>
         Claude Code
       </span>
     </div>

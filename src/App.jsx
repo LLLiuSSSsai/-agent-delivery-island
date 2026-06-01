@@ -34,6 +34,7 @@ export default function App() {
           task={state.task}
           toolType={state.toolType}
           toolLabel={state.toolLabel}
+          expanded={expanded}
           onExpandedChange={setExpanded}
         />;
       case 'complete':

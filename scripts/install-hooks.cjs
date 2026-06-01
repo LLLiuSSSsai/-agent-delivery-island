@@ -18,8 +18,8 @@ console.log('Backup saved');
 const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
 
 config.hooks = config.hooks || {};
-config.hooks.PostToolUse = [{ matcher: '', command: 'node ' + hookDir + '/post-tool-use.cjs' }];
-config.hooks.PreToolUse = [{ matcher: '', command: 'node ' + hookDir + '/pre-tool-use.cjs' }];
+config.hooks.PostToolUse = [{ matcher: '*', command: 'node ' + hookDir + '/post-tool-use.cjs' }];
+config.hooks.PreToolUse = [{ matcher: '*', command: 'node ' + hookDir + '/pre-tool-use.cjs' }];
 config.hooks.Stop = [{ matcher: '', command: 'node ' + hookDir + '/stop.cjs' }];
 
 fs.writeFileSync(configPath, JSON.stringify(config, null, 2));

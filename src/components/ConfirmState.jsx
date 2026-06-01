@@ -5,6 +5,7 @@ export default function ConfirmState({
   task = '',
   toolType = '',
   toolLabel = '',
+  expanded = false,
   onExpandedChange,
 }) {
   const leaveTimer = useRef(null);
@@ -74,8 +75,8 @@ export default function ConfirmState({
         </span>
       </div>
 
-      {/* 展开确认面板 */}
-      <div style={{
+      {/* 展开确认面板 — 仅 expanded 时渲染，保证尺寸测量准确 */}
+      {expanded && <div style={{
         padding: '12px 18px 16px',
         WebkitAppRegion: 'no-drag',
         display: 'flex',
@@ -184,7 +185,7 @@ export default function ConfirmState({
             No 取消操作
           </button>
         </div>
-      </div>
+      </div>}
     </div>
   );
 }
