@@ -17,15 +17,15 @@
 
 <p align="center">
   <img src="screenshots/01-idle.png" alt="待命中 (Idle)" width="260" />
-  <img src="screenshots/02-delivering.png" alt="配送中 (Delivering)" width="360" />
+  <img src="screenshots/02-delivering.jpg" alt="配送中 (Delivering)" width="360" />
 </p>
 
 <p align="center">
-  <img src="screenshots/03-confirm.png" alt="确认请求 (Confirm)" width="520" />
+  <img src="screenshots/03-confirm.jpg" alt="确认请求 (Confirm)" width="520" />
 </p>
 
 <p align="center">
-  <img src="screenshots/04-complete.png" alt="订单完成 (Complete)" width="260" />
+  <img src="screenshots/04-complete.jpg" alt="订单完成 (Complete)" width="260" />
 </p>
 
 **亮点：**
